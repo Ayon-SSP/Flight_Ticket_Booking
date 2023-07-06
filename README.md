@@ -41,6 +41,12 @@ Create a web application for flight ticket booking. Use any tech stack for the b
 -> Frontend Django Template language(jinja) Html + JS + Bootstrap
                         if time can shift to react JS
 
+-> Backend Django Auth System
+       - User(SignUp, Login, Logout)
+       - Admin[Login, create suing django-admin]
+       - Access control *
+       - Using Tokens
+
 -> Backend server takes care of
        - Searching for flights based on date and time
        - Booking tickets on a flight based on availability
@@ -51,7 +57,13 @@ Create a web application for flight ticket booking. Use any tech stack for the b
        - Remove flights
        - View all the booking based on flight number
                      and time
--> DataBase
+
+-> DataBase (PostgreSQL)
        - PostgreSQL[sql commands]
+       - DB schema
+       - Access control *
+       - Primary key & Foreign key
+       - Used ORM (Object-Relational Mapping)
+
 
 ```
