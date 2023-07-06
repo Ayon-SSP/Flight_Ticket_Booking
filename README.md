@@ -1,6 +1,7 @@
-# Monitoring_Flask-RestAPI-pgadmin-sql [`📺 Video Link`](https://youtu.be/n2GgGz60j1A)
+# Flight Ticket Booking [`📺 Video Link`](https://youtube.com)
 
-This project aims to help restaurant owners monitor the uptime of their online stores during business hours. The backend APIs provided in this project will allow restaurant owners to view reports on past store inactivity.
+Create a web application for flight ticket booking. Use any tech stack for the backend and db. A basic UI made outta HTML and CSS is expected. Submissions with a  plain console based CRUD app won't be entertained.
+
 # 🎯 Block Model
 
     Take Home Intervies Round 2 Ayon-ssp c-> DevRev
