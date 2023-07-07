@@ -1,37 +1,48 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-  ✈️ Flights
+  Flights
 {% endblock %}
 
 {% block content %}
-<h1>Flights</h1>
+<h1>✈️ Flights</h1>
+<br>
 <form method="GET" action="{% url 'flight_list' %}">
   <label for="start_date">Start Date:</label>
   <input type="datetime-local" id="start_date" name="start_date">
   <label for="end_date">End Date:</label>
   <input type="datetime-local" id="end_date" name="end_date">
-  <input type="submit" value="Filter">
+  <input class="btn btn-success" type="submit" value="Filter">
 </form>
-
+<br>
+{% if user.is_superuser %}
+  <a class="btn btn-success" href="/add"> Add Flights</a>
+{% endif %}
 <ul>
   {% for flight in flights %}
     <li>
-      {{ flight.flight_name }} - {{ flight.departure_time }}
-      {% if flight.seats %}
+      {{ flight.id }}: {{ flight.flight_name }} - {{ flight.departure_time }}
+      {% if user.is_superuser %}
+      <a class='btn btn-danger' href="remove/{{ flight.id }}/">Delete Flight</a>
+      {% else %}
+      <a class='btn btn-success' href="book/{{ flight.id }}/">Book Flight</a>
+      {% endif %}
+      {% if flight.seats and user.is_superuser %}
         <ul>
           {% for seat in flight.seats %}
             {% if seat is not -1 %}
               <li>Seat {{ forloop.counter }}: Booked by User {{ seat }}</li>
-            {% endif %}
-          {% endfor %}
+              {% endif %}
+              {% endfor %}
         </ul>
-      {% else %}
+      {% elif user.is_superuser %}
         <p>No bookings yet.</p>
       {% endif %}
     </li>
+    <br>
   {% empty %}
     <li>No flights available.</li>
+    <br>
   {% endfor %}
 </ul>
 {% endblock %}

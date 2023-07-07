@@ -54,17 +54,19 @@ def book_flight(request, flight_id):
         if seat_number in available_seats and available_seats[seat_number]:
             seats[seat_number-1] = user_id
             flight.save()
-            return redirect('view_bookings', flight_id=flight_id)
+            flights = Flight.objects.order_by('departure_time')
+            # redirect('flight_list', flights= flights)
+            return render(request, 'main/flight_list.html', {'flights': flights})
 
-    return render(request, 'main/flight_list.html', {'flight': flight, 'available_seats': available_seats})
+    return render(request, 'main/book_flight.html', {'flight': flight, 'available_seats': available_seats})
 
 
-
+@login_required(login_url='/login')
 def user_bookings(request, user_id):
     bookings = Flight.objects.filter(seats__contains=[user_id])
     return render(request, 'main/user_bookings.html', {'bookings': bookings})
 
-
+@login_required(login_url='/login')
 def add_flight(request):
     if request.method == 'POST':
         flight_name = request.POST['flight_name']
@@ -74,8 +76,7 @@ def add_flight(request):
         return redirect('home')
     return render(request, 'main/add_flight.html')
 
-
-
+@login_required(login_url='/login')
 def remove_flight(request, flight_id):
     flight = get_object_or_404(Flight, pk=flight_id)
     flight.delete()

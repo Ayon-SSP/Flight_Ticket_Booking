@@ -7,11 +7,13 @@
 {% block content %}
 
 <h1>User Bookings</h1>
+
 <ul>
   {% for booking in bookings %}
-    <li>{{ booking.flight_number }} - {{ booking.departure_time }}</li>
+  <li>{{ booking.flight_name }} </li>
+    {{ booking.flight_number }} - {{ booking.departure_time }}
   {% empty %}
-    <li>No bookings found.</li>
+    No bookings found.
   {% endfor %}
 </ul>
 
