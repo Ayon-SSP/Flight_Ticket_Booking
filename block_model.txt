@@ -38,7 +38,7 @@ Take Home Intervies Ayon-ssp c-> DevRev
                         if time can shift to react JS
 
 -> Backend Django Auth System
-       - User(SignUp, Login, Logout)
+       - User(SignUp (checks_valid), Login, Logout)
        - Admin[Login, create suing django-admin]
        - Access control *
        - Using Tokens

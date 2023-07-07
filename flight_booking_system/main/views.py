@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import login, logout, authenticate
 from .models import Flight
-
 
 @login_required(login_url='/login')
 def home(request):
@@ -32,3 +31,10 @@ def add_flight(request):
         flight.save()
         return redirect('home')
     return render(request, 'main/add_flight.html')
+
+
+
+def remove_flight(request, flight_id):
+    flight = get_object_or_404(Flight, pk=flight_id)
+    flight.delete()
+    return redirect('flight_list')
