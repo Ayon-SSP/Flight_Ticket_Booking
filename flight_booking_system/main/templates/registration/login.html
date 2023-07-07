@@ -3,11 +3,19 @@
   Login
 {% endblock %}
 {% load crispy_forms_tags %} {% block content %}
+<br />
+  <h1>Sign In</h1>
+  <p>Log in your account</p>
   <form method="post">
     {% csrf_token %}{{ form|crispy }}
-    <p>
-      Don't have an account? Create one <a href="/sign-up">Here</a>!
-    </p>
     <button type="submit" class="btn btn-success">Login</button>
+    <br />
+    <br />
+    <p>
+      Don't have an account? <a href="/sign-up">Sign Up</a>
+    </p>
+    <p>
+      Forgot your Password? <a href="/password_reset">Reset Password</a>
+    </p>
   </form>
 {% endblock %}
