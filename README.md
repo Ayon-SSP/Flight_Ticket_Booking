@@ -1,4 +1,4 @@
-# Flight Ticket Booking [`📺 Video Link`](https://youtube.com)
+# Flight Ticket Booking [`📺 Video Link`]([https://youtube.com](https://youtu.be/BVY7doCcjkA))
 
 Create a web application for flight ticket booking. Use any tech stack for the backend and db. A basic UI made outta HTML and CSS is expected. Submissions with a  plain console based CRUD app won't be entertained.
 
