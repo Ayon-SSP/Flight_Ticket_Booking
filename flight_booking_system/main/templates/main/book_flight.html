@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+  ✈️ User Bookings
+{% endblock %}
+
+{% block content %}
+  <h1>Book Flight</h1>
+  <form method="post">
+    {% csrf_token %}
+    <p>Available Seats:</p>
+    <ul>
+      {% for seat_number, seat in available_seats.items %}
+        <li>
+          Seat {{ seat_number }}{% if seat %}: Available {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <label for="seat_number">Seat Number:</label>
+    <input type="number" id="seat_number" name="seat_number" min="1" max="60" required /><br />
+    <input type="hidden" name="user_id" value="{{ user.id }}" />
+    <input type="submit" value="Book" />
+  </form>
+{% endblock %}

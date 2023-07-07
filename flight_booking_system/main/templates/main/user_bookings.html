@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+  ✈️ Flights
+{% endblock %}
+
+{% block content %}
+
+<h1>User Bookings</h1>
+<ul>
+  {% for booking in bookings %}
+    <li>{{ booking.flight_number }} - {{ booking.departure_time }}</li>
+  {% empty %}
+    <li>No bookings found.</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
