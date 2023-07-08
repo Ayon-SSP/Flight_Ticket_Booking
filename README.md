@@ -6,7 +6,7 @@ Create a web application for flight ticket booking. Use any tech stack for the b
 
     Take Home Intervies Round 2 Ayon-ssp c-> DevRev
 
-                                                                  User Request
+                                                                     User
                                                                        |
                                                                        ↓
                                                                +-------------------------------------------------------------------------+
