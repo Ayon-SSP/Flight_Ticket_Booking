@@ -2,6 +2,26 @@
 
 Create a web application for flight ticket booking. Use any tech stack for the backend and db. A basic UI made outta HTML and CSS is expected. Submissions with a  plain console based CRUD app won't be entertained.
 
+# Flight Booking & Management System ✈️
+
+## Overview
+This project is a Flight Booking & Management System developed using Django as the backend framework. It provides a user-friendly interface for users to search, book flights, and manage their bookings. The system also includes admin functionality to add and remove flights. The application features token-based authentication for secure user access.
+
+## Features
+- User Authentication: Token-based authentication system to ensure secure user access.
+- Flight Search: Users can search for available flights based on date and time.
+- Flight Booking: Users can book flights based on seat availability (default seat count is 60).
+- Booking Management: Users can view and manage their flight bookings.
+- Admin Privileges: Admins have the ability to add and remove flights through the Django admin panel.
+
+## Tech Stack
+- Backend: Django, PostgreSQL, SQLAlchemy (preprocessing)
+- Frontend: Django Template Language (Jinja), Bootstrap (frontend integration)
+
+## Installation
+1. Clone the repository:
+
+
 # 🎯 Block Model
 
     Take Home Intervies Round 2 Ayon-ssp c-> DevRev
